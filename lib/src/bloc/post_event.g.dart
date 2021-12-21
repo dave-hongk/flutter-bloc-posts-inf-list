@@ -13,11 +13,14 @@ class _$PostRequested extends PostRequested {
   final String? toTimestamp;
   @override
   final String? fromId;
+  @override
+  final int? maxCount;
 
   factory _$PostRequested([void Function(PostRequestedBuilder)? updates]) =>
       (new PostRequestedBuilder()..update(updates)).build();
 
-  _$PostRequested._({this.fromTimestamp, this.toTimestamp, this.fromId})
+  _$PostRequested._(
+      {this.fromTimestamp, this.toTimestamp, this.fromId, this.maxCount})
       : super._();
 
   @override
@@ -33,13 +36,16 @@ class _$PostRequested extends PostRequested {
     return other is PostRequested &&
         fromTimestamp == other.fromTimestamp &&
         toTimestamp == other.toTimestamp &&
-        fromId == other.fromId;
+        fromId == other.fromId &&
+        maxCount == other.maxCount;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, fromTimestamp.hashCode), toTimestamp.hashCode),
-        fromId.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, fromTimestamp.hashCode), toTimestamp.hashCode),
+            fromId.hashCode),
+        maxCount.hashCode));
   }
 
   @override
@@ -47,7 +53,8 @@ class _$PostRequested extends PostRequested {
     return (newBuiltValueToStringHelper('PostRequested')
           ..add('fromTimestamp', fromTimestamp)
           ..add('toTimestamp', toTimestamp)
-          ..add('fromId', fromId))
+          ..add('fromId', fromId)
+          ..add('maxCount', maxCount))
         .toString();
   }
 }
@@ -69,6 +76,10 @@ class PostRequestedBuilder
   String? get fromId => _$this._fromId;
   set fromId(String? fromId) => _$this._fromId = fromId;
 
+  int? _maxCount;
+  int? get maxCount => _$this._maxCount;
+  set maxCount(int? maxCount) => _$this._maxCount = maxCount;
+
   PostRequestedBuilder();
 
   PostRequestedBuilder get _$this {
@@ -77,6 +88,7 @@ class PostRequestedBuilder
       _fromTimestamp = $v.fromTimestamp;
       _toTimestamp = $v.toTimestamp;
       _fromId = $v.fromId;
+      _maxCount = $v.maxCount;
       _$v = null;
     }
     return this;
@@ -99,7 +111,8 @@ class PostRequestedBuilder
         new _$PostRequested._(
             fromTimestamp: fromTimestamp,
             toTimestamp: toTimestamp,
-            fromId: fromId);
+            fromId: fromId,
+            maxCount: maxCount);
     replace(_$result);
     return _$result;
   }

@@ -8,13 +8,16 @@ void main() {
         final event1 = PostRequested((b) => b
           ..toTimestamp = '1'
           ..fromTimestamp = '2'
-          ..fromId = '3');
+          ..fromId = '3'
+          ..maxCount = 2);
         final event2 = PostRequested((b) => b
           ..toTimestamp = '1'
           ..fromTimestamp = '2'
-          ..fromId = '3');
+          ..fromId = '3'
+          ..maxCount = 2);
         expect(event1 == event2, isTrue);
         expect(PostRequested() == PostRequested(), isTrue);
+        expect(event1 == PostRequested(), isFalse);
       });
     });
   });

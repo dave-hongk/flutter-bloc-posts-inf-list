@@ -29,6 +29,8 @@ environment:
 dependencies:
   bloc:
   built_value:
+  cloud_firestore:
+  firebase_core:
   flutter:
     sdk: flutter
 

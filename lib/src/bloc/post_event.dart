@@ -20,6 +20,9 @@ abstract class PostRequested extends PostEvent
   /// Request [Post] items to have ID larger than this ID.
   String? get fromId;
 
+  /// Maximum number of [Post] items to fetch and return.
+  int? get maxCount;
+
   /// {@macro post_requested}
   factory PostRequested([Function(PostRequestedBuilder b) update]) =
       _$PostRequested;
